@@ -1,0 +1,80 @@
+//output in java
+// public class Javabasics{
+//     public static void main(String[] args){
+//         System.out.println("Hello Duniya!");
+//     }
+// }
+
+
+
+// //print: prints the output without space of line
+// public class Javabasics{
+//     public static void main(String[] args){
+//         System.out.print("Hello Duniya!");
+//     }
+// }
+
+
+
+// //println: print output with the space of line after each output
+// public class Javabasics{
+//     public static void main(String[] args){
+//         System.out.println("Hello Duniya!");
+//     }
+// }
+
+
+
+// // '\n': print output with the space of line after each output
+// public class Javabasics{
+//     public static void main(String[] args){
+//         System.out.print("Hello Duniya!\n");
+//         System.out.print("Hello Duniya!");
+//     }
+// }
+
+
+
+//------------VARIABLES IN JAVA------------------
+// //variable: a variable is a container that holds data that can be changed during the execution of a program
+// public class Javabasics{ 
+//     public static void main(String[] args){
+//         int age = 25; //integer variable
+//         String name = "John"; //string variable
+//         double salary = 50000.50; //double variable
+//         boolean isMarried = false; //boolean variable
+//         System.out.println("Name: " + name);
+//         System.out.println("Age: " + age);       
+//         System.out.println("Salary: " + salary);
+//         System.out.println("Married: " + isMarried);
+//     }
+// }
+
+
+//-----------------------------DATA TYPES IN JAVA------------------
+// //data types: a data type is a classification of data that tells the compiler or interpreter
+// //how the programmer intends to use the data. Java has two categories of data types: primitive and non-primitive
+
+// //primitive data types: a primitive data type is a basic data type that is not an object and has no methods.
+// public class Javabasics{ 
+//     public static void main(String[] args){
+//         int age = 25; //integer variable
+//         double salary = 50000.50; //double variable
+//         boolean isMarried = false; //boolean variable
+//         char grade = 'A'; //char variable
+//         System.out.println("Age: " + age);
+//         System.out.println("Salary: " + salary);
+//         System.out.println("Married: " + isMarried);
+//         System.out.println("Grade: " + grade);
+//     }
+// }
+
+// //non-primitive data types: a non-primitive data type is a data type that is an object and has methods.
+// public class Javabasics{
+//     public static void main(String[] args){
+//         String name = "John"; //string variable
+//         System.out.println("Name: " + name);
+//     }
+// }
+
+
