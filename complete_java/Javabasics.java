@@ -133,24 +133,111 @@
 
 //---------------if-else statement in java------------------
 //---------------else-if statement in java------------------
+// import java.util.*;
+// public class Javabasics{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+
+//         int tax = 0;
+//         int income = sc.nextInt();
+
+//         if(income < 500000){
+//             System.out.println(tax+"% Tax");
+//         }else if(income >= 500000 && income <= 1000000){
+//             tax = (income/100) * 20;
+//             System.out.println(tax+"% Tax");
+//         }else if(income > 1000000){
+//             tax = (income/100) * 30;
+//             System.out.println(tax+"% Tax");
+//         }else{
+//             System.out.println("Invalid Income");
+//         }
+//     }
+// }
+
+
+
+//---------------------Largest of the three numbers A , B, C
+
+// public class Javabasics{
+//     public static void main(String[] args){
+//         int a = 110, b = 90, c = 30;
+
+//         if(a > b && a > c){
+//             System.out.println(" a is Greater");
+//         }else if(b > c){
+//             System.out.println("b is greater");
+//         }else{
+//             System.out.println("c is greater");
+//         }
+//     }
+// }
+
+
+
+// public class Javabasics{
+//     public static void main(String[] args){
+//         int num = 8;
+
+//         String output = (num%2 == 0) ? "even number" : "odd number";
+
+//         System.out.println(output);
+//     }
+// }
+
+
+// public class Javabasics{
+//     public static void main(String[] args){
+//         int marks = 40;
+
+//         String result = (marks >= 40) ? "Pass" : "Fail";
+
+//         System.out.println(result);
+//     }
+// }
+
+
 import java.util.*;
 public class Javabasics{
     public static void main(String[] args){
+        System.out.println("Press 1 for Addition");
+        System.out.println("Press 2 for Substraction");
+        System.out.println("Press 3 for Multiplication");
+        System.out.println("Press 4 for Division");
+        System.out.println("Press 5 for Modulus");
+
         Scanner sc = new Scanner(System.in);
+        int operation = sc.nextInt();
 
-        int tax = 0;
-        int income = sc.nextInt();
+        System.out.println("Enter the first num: ");
+        int a = sc.nextInt();
+        System.out.println("Enter the first num: ");
+        int b = sc.nextInt();
 
-        if(income < 500000){
-            System.out.println(tax+"% Tax");
-        }else if(income >= 500000 && income <= 1000000){
-            tax = (income/100) * 20;
-            System.out.println(tax+"% Tax");
-        }else if(income > 1000000){
-            tax = (income/100) * 30;
-            System.out.println(tax+"% Tax");
-        }else{
-            System.out.println("Invalid Income");
+        switch(operation){
+            case 1:
+                int sum = a+b;
+                System.out.println(sum);
+                break;
+            case 2:
+                int sub = a-b;
+                System.out.println(sub);
+                break;
+            case 3:
+                int mul = a*b;
+                System.out.println(mul);
+                break;
+            case 4:
+                int div = a/b;
+                System.out.println(div);
+                break;
+            case 5:
+                int mod = a%b;
+                System.out.println(mod);
+                break;
+            default:
+                System.out.println("Invalid input");
         }
+
     }
 }
