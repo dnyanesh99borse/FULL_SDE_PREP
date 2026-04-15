@@ -203,18 +203,70 @@
 //         }
 //     }
 // }
-public class Javabasics {
 
-    public static void main(String[] args) {
-        int n = 10899;
-        int rev = 0;
 
-        while (n != 0) {
-            int last = n % 10;
-            n = n / 10;
 
-            rev = (rev * 10) + last;
-        }
-        System.out.println(rev);
+
+// public class Javabasics {
+
+//     public static void main(String[] args) {
+//         int n = 10899;
+//         int rev = 0;
+
+//         while (n != 0) {
+//             int last = n % 10;
+//             n = n / 10;
+
+//             rev = (rev * 10) + last;
+//         }
+//         System.out.println(rev);
+//     }
+// }
+
+
+
+
+// //--keep entering numbers till user enters a multiple of 10;
+// import java.util.*;
+// public class Javabasics{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+
+//         int nuumber = 0;
+//         do{
+//             System.out.println("Enter a number");
+//             int number = sc.nextInt();
+
+//             if(number % 10 == 0){
+//                 break;
+//             }
+
+//             System.out.println(number);
+//         }while(true);
+//     }
+// }
+
+
+
+
+
+
+//--display all numbers entered by users except multiple of 10;
+import java.util.*;
+public class Javabasics{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int nuumber = 0;
+        do{
+            System.out.println("Enter a number");
+            int number = sc.nextInt();
+
+            if(number % 10 == 0){
+                continue;
+            }
+
+            System.out.println(number);
+        }while(true);
     }
 }
