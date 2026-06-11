@@ -1,3 +1,5 @@
+//---------ENCAPSULATION-----------
+
 class BankAccount{
     private double balance;
 
