@@ -73,39 +73,110 @@
 
 
 //-------------------HIERARCHICAL INHERITANCE----------------------------
+// class Animal{
+//     void eat(){
+//         System.out.println("Eating");
+//     }
+// }
+// class Dog extends Animal{
+//     void bark(){
+//         System.out.println("Barking");
+//     }
+// }
+// class Cat extends Animal{
+//     void meow(){
+//         System.out.println("Meowing");
+//     }
+// }
+// class Elephant extends Animal{
+//     void size(){
+//         System.out.println("Enormous");
+//     }
+// }
+
+// public class Inheritance{
+//     public static void main(String[] args){
+//         Dog d = new Dog();
+//         d.eat();
+//         d.bark();
+
+//         Cat c = new Cat();
+//         c.eat();
+//         c.meow();
+
+//         Elephant e = new Elephant();
+//         e.eat();
+//         e.size();
+//     }
+// }
+
+
+
+
+
+//-------------------HYBRID INHERITANCE----------------------------
 class Animal{
     void eat(){
         System.out.println("Eating");
     }
 }
-class Dog extends Animal{
+class Fish extends Animal{
+    void aqua(){
+        System.out.println("Aquatic");
+    }
+}
+class Tuna extends Fish{
+    void tuna(){
+        System.out.println("I am tuna fish");
+    }
+}
+class Shark extends Fish{
+    void shark(){
+        System.out.println("I am shark");
+    }
+}
+class Bird extends Animal{
+    void fly(){
+        System.out.println("Flying");
+    }
+}
+class Peacock extends Bird{
+    void pea(){
+        System.out.println("I am a National Bird");
+    }
+}
+class Mammals extends Animal{
+    void mamm(){
+        System.out.println("Mammals");
+    }
+}
+class Dog extends Mammals{
     void bark(){
         System.out.println("Barking");
-    }
-}
-class Cat extends Animal{
-    void meow(){
-        System.out.println("Meowing");
-    }
-}
-class Elephant extends Animal{
-    void size(){
-        System.out.println("Enormous");
     }
 }
 
 public class Inheritance{
     public static void main(String[] args){
-        Dog d = new Dog();
-        d.eat();
-        d.bark();
+        System.out.println("class Fish");
+        Fish f = new Fish();
+        f.eat();
+        f.aqua();
+        System.out.println("Class Tuna from class Fish");
+        Tuna t = new Tuna();
+        t.eat();
+        t.aqua();
+        t.tuna();
 
-        Cat c = new Cat();
-        c.eat();
-        c.meow();
-
-        Elephant e = new Elephant();
-        e.eat();
-        e.size();
+        System.out.println("Class Bird"); 
+        Bird b = new Bird();
+        b.eat();
+        b.fly();
+        
+        System.out.println("Class Peacock from Class Bird");
+        Peacock p = new Peacock();
+        p.eat();
+        p.fly();
+        p.pea();
     }
 }
