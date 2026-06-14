@@ -26,3 +26,4 @@ public class LC14LCP{
         System.out.println(longestCommonPrefix(strs));
     }
 }
+
