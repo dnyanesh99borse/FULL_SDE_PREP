@@ -26,7 +26,7 @@ public class PairSum2 {
                 lp = (lp + 1) % n;
             } else {
                 //case 3
-                rp = (n + rp + 1) % n;
+                rp = (n + rp - 1) % n;
             }
         }
         return false;
