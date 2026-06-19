@@ -142,6 +142,9 @@ public class LinkedList{
         Node temp = head;
         int idx = 0;
 
+        if(temp.data == key){
+            return idx;
+        }
         while(temp != null){
             if(temp.data == key){
                 return idx;
@@ -152,6 +155,44 @@ public class LinkedList{
         //key not found
         return -1;
     }
+
+    //ITERATIVE SEARCH
+    public int helper(Node head, int key){
+        if(head == null){
+            return -1;
+        }
+        if(head.data == key){
+            return 0;
+        }
+
+        int idx = helper(head.next, key);
+        if(idx == -1){
+            return -1;
+        }
+        return idx + 1;
+    }
+    public int recSearch(int key){
+        return helper(head, key);
+    }
+
+    //REVERSE ITERATIVE
+    public void reverse(){
+        Node prev = null;
+        Node curr = tail = head;  //Node curr = head
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        //cause now curr became null but the previous was the last node that should be our head.
+        head = prev;
+    }
+
+    
+
     public static void main(String[] args){
         LinkedList ll = new LinkedList();
         //addFirst
@@ -183,7 +224,16 @@ public class LinkedList{
         System.out.println("Size of LL: " + ll.size);
 
         //ITERATIVE SEARCH
-        System.out.println(ll.inrSearch(2));
-        System.out.println(ll.inrSearch(50));
+        // System.out.println(ll.inrSearch(2));
+        // System.out.println(ll.inrSearch(50));
+
+        //RECURSIVE SEARCH
+        System.out.println(ll.recSearch(2));
+        System.out.println(ll.recSearch(50));
+
+        //REVERSE
+        ll.print(); 
+        ll.reverse();
+        ll.print();
     }
 }
