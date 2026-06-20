@@ -91,7 +91,7 @@ public class RemoveCycle{
 
         //note in remvove cycle in competitions the cycle will always be like from any other point rather than the head
         //not the whole cycle will be there.. but as we are creating the linked list above directly connecting head with the last node
-        //it is creating full cycle.. thus.. we should have to create a VALID CYCLIC LL first and then apply removeCycle() function.
+        //it is creating full cycle.. thus.. we should have to create a VALID CYCLIC LL AS SHOWN ABOVE first and then apply removeCycle() function.
         // rc.removeCycle();
     }
 }
