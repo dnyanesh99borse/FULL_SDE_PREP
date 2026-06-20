@@ -194,37 +194,44 @@ public class LinkedList {
         head = prev;
     }
 
-    //REMOVE NTH NODE FROM END
     public void removeNth(int n) {
 
-        if (size == 0) {
-            System.out.println("Linked List is Empty");
-            return;
-        }
+    int sz = 0;
+    Node temp = head;
 
-        if (n > size) {
-            System.out.println("Invalid Position");
-            return;
-        }
-
-        // remove head
-        if (n == size) {
-            head = head.next;
-            size--;
-            return;
-        }
-
-        int newN = size - n;
-
-        Node prev = head;
-
-        for (int i = 1; i < newN; i++) {
-            prev = prev.next;
-        }
-
-        prev.next = prev.next.next;
-        size--;
+    while(temp != null){
+        temp = temp.next;
+        sz++;
     }
+
+    if(sz == 0){
+        System.out.println("Linked List is Empty");
+        return;
+    }
+
+    if(n > sz){
+        System.out.println("Invalid Position");
+        return;
+    }
+
+    // remove first node
+    if(n == sz){
+        head = head.next;
+        return;
+    }
+
+    int idxToFind = sz - n;
+
+    Node prev = head;
+
+    for(int i = 1; i < idxToFind; i++){
+        prev = prev.next;
+    }
+
+    //for static size
+    size--;
+    prev.next = prev.next.next;
+}
 
     //FIND MID USING SLOW-FAST APPROACH
     public Node findMid(Node head){
@@ -232,11 +239,42 @@ public class LinkedList {
         Node fast = head;
 
         //continue only when both conditions are true else stop.
-        while(fast != null || fast.next != null){
+        while(fast != null && fast.next != null){
             slow = slow.next; //move by +1
             fast = fast.next.next; //move by +2
         }
         return slow; //means slow is my mid
+    }
+
+    //CHECK PALINDROME
+    public boolean checkPalindrome(){
+        //if LL is empty or just having one Node
+        if(head == null || head.next == null){
+            return true;
+        }
+        //1.find Mide Node
+        Node mid = findMid(head);
+        //2.reverse 2nd half
+        Node prev = null;
+        Node curr = mid;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; //right ka head
+        Node left = head; //left ka head
+        //3.check and compare Left and Right half
+        while(right != null){
+            if(right.data != left.data){
+                return false;
+            }
+            left = left.next;
+            right = right.next; //this is reversed now right hence it will work from end.
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -244,7 +282,7 @@ public class LinkedList {
         //addFirst
         ll.addFirst(5);
         ll.print();
-        ll.addFirst(4);
+        ll.addFirst(3);
         ll.print();
         //addMiddle
         ll.add(0, 2);
@@ -254,9 +292,9 @@ public class LinkedList {
         ll.add(2, 3);
         ll.print();
         //addLast
-        ll.addLast(6);
+        ll.addLast(2);
         ll.print();
-        ll.addLast(7);
+        ll.addLast(1);
         ll.print();
         //9->10->11->2->1->3->4
         //size = 7
@@ -283,5 +321,7 @@ public class LinkedList {
         //REMOVE NTH FROM END
         ll.removeNth(3);  //here initially LL : 
         ll.print();
+        System.out.println(ll.checkPalindrome());
+        System.out.println("Size of LL: " + ll.size);
     }
 }
