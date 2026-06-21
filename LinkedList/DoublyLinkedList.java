@@ -89,19 +89,36 @@ public class DoublyLinkedList {
         tail.next = null;
         size--;
     }
+    //-------------REVERSE DOUBLYLL---------------------
+    public void reverse(){
+        Node curr = head;
+        Node prev = null;
+        Node next;
+        
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next; //change linking ulta kar rahe hai node to using this two steps
+            
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
     public static void main(String[] args) {
         DoublyLinkedList dl = new DoublyLinkedList();
 
-        dl.addFirst(4); 
-        dl.addFirst(5);
-        dl.addLast(6);
-        dl.addLast(7);
-        dl.print(); //5->4->6->7
-        dl.removeFirst(); //4->6->7->null
-        dl.print();
-        dl.removeLast(); //4->6->null //last
-        dl.print();
-        dl.removeLast(); //4->null //last
+        dl.addFirst(20); 
+        dl.addFirst(10);
+        dl.addLast(30);
+        dl.addLast(40);
+        dl.print(); //10->20->30->40
+        // dl.removeFirst(); //4->6->7->null
+        // dl.print();
+        // dl.removeLast(); //4->6->null //last
+        // dl.print();
+        // dl.removeLast(); //4->null //last
+        dl.reverse();
         dl.print();
         System.out.println("size : " + dl.size);
     }
