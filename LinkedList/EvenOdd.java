@@ -17,7 +17,7 @@ public class EvenOdd {
     }
 
     public static Node head;
-    public static Node tail;
+    public static Node tail; 
 
     // Add node at end
     public void addLast(int data) {
