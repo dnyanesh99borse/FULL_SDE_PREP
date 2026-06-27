@@ -21,7 +21,7 @@ public class CircularQueue{
             return (rear + 1) % size == front;
         }
 
-        //add
+        //add //ENQUEUE
         public static void add(int data){
             if(isFull()){
                 System.out.println("queue is full");
