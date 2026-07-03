@@ -1,4 +1,4 @@
-public class CountOfNodes{
+public class SumOfNodes{
     static class Node{
         int data;
         Node left;
@@ -6,8 +6,8 @@ public class CountOfNodes{
 
         public Node(int data){
             this.data = data;
-            this.left = null;
-            this.right = null;
+            left = null;
+            right = null;
         }
     }
 
@@ -26,26 +26,26 @@ public class CountOfNodes{
             return newNode;
         }
     }
-    //--------COUNT OF NODES-------------------
-    public static int Count(Node root){
+
+    public static int Sum(Node root){
         if(root == null){
             return 0;
         }
 
-        int lc = Count(root.left);
-        int rc = Count(root.right);
+        int ls = Sum(root.left);
+        int rs = Sum(root.right);
 
-        int count = (lc + rc) + 1;
+        int sum = ls + rs + root.data;
 
-        return count;
+        return sum;
     }
-    public static void main(String[] main){
+    public static void main(String[] args){
         // Preorder Representation
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
 
         BinaryTree tree = new BinaryTree();
         Node root = tree.BuildTree(nodes);
 
-        System.out.println("Count of Nodes = " + Count(root));
+        System.out.println("Sum of Nodes = " + Sum(root));
     }
 }
