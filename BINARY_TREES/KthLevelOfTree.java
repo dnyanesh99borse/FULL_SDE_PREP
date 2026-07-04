@@ -27,42 +27,60 @@ public class KthLevelOfTree{
             return newNode;
         }
     }
+    //--------------------------ITERATIVE----------------------------------
+    // public static void kLevel(Node root){
+    //     Queue<Node> q = new LinkedList<>();
+    //     q.add(root);
+    //     q.add(null);
+    //     int track = 1; int key = 3;
 
-    public static void kLevel(Node root){
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-        q.add(null);
-        int track = 1; int key = 3;
-
-        while(!q.isEmpty()){
-            Node currNode = q.remove();
-            if(currNode == null){
-                track++; //getting null means level change
-                if(q.isEmpty()){
-                    break;
-                }else{
-                    q.add(null);
-                }
-                //if key found then till next null print all elements.
-                if(track == key){
-                    Node curr = q.remove();
-                    while(curr != null){
-                        System.out.print(curr.data + " ");
-                        curr = q.remove();
-                    }
-                    break;
-                }
+    //     while(!q.isEmpty()){
+    //         Node currNode = q.remove();
+    //         if(currNode == null){
+    //             track++; //getting null means level change
+    //             if(q.isEmpty()){
+    //                 break;
+    //             }else{
+    //                 q.add(null);
+    //             }
+    //             //if key found then till next null print all elements.
+    //             if(track == key){
+    //                 Node curr = q.remove();
+    //                 while(curr != null){
+    //                     System.out.print(curr.data + " ");
+    //                     curr = q.remove();
+    //                 }
+    //                 break;
+    //             }
                 
-            }else{
-                if(currNode.left != null){
-                    q.add(currNode.left); //add left node of curr into queue
-                }
+    //         }else{
+    //             if(currNode.left != null){
+    //                 q.add(currNode.left); //add left node of curr into queue
+    //             }
 
-                if(currNode.right != null){
-                    q.add(currNode.right); //add right node of curr into queue
-                }
-            }
+    //             if(currNode.right != null){
+    //                 q.add(currNode.right); //add right node of curr into queue
+    //             }
+    //         }
+    //     }
+    // }
+
+    //------------------------------RECURSIVE------------------------------------
+    public static void kLevel(Node root, int level, int k){
+        //base case
+        if(root == null){
+            return;
         }
+
+        if(level == k){
+            System.out.print(root.data + " ");
+            return;
+        }
+
+        //ask for left subtree for kth level elements
+        kLevel(root.left, level + 1, k);
+        //ask for right subtree for kth level elements
+        kLevel(root.right, level + 1, k);
     }
 
     public static void main(String[] args){
@@ -74,6 +92,7 @@ public class KthLevelOfTree{
         BinaryTree tree = new BinaryTree();
         Node root = tree.BuildTree(nodes);
 
-        kLevel(root);
+        //initially the level is 1 and key = 3;
+        kLevel(root, 1, 3);
     }
 }
