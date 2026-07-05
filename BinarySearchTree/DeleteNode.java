@@ -35,7 +35,7 @@ public class DeleteNode{
         System.out.print(root.data + " ");
         inOrder(root.right);
     }
-
+//--------------------------DELETE--------------------------------
     public static Node delete(Node root, int val){
         //base case
         if(root == null){
