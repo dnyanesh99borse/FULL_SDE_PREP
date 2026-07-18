@@ -67,7 +67,7 @@
 
 
 //-----------------OPTIMAL APPROACH 3()-------------------------
-//------------------------TIME: O(N), SPACE:O(n);
+//------------------------TIME: O(N), SPACE:O(n);---------------
 import java.util.*;
 public class FindMissing{
     public static void main(String[] args){

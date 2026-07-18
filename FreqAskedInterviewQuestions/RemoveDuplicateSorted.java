@@ -1,62 +1,36 @@
-// --------- BRUTE FORCE APPROACH ----------
-// public class RemoveDuplicateSorted {
 
-//     public static void main(String[] args) {
-
-//         int[] arr = {1, 1, 2, 2, 3, 3, 4};
-
-//         int size = arr.length;
-
-//         for (int i = 0; i < size - 1; i++) {
-
-//             if (arr[i] == arr[i + 1]) {
-
-//                 // Shift elements to the left
-//                 for (int j = i; j < size - 1; j++) {
-//                     arr[j] = arr[j + 1];
-//                 }
-
-//                 size--;     // One duplicate removed
-
-//                 i--;        // Check the current index again
-//             }
-//         }
-
-//         System.out.println("New Length = " + size);
-
-//         System.out.print("Array = ");
-//         for (int i = 0; i < size; i++) {
-//             System.out.print(arr[i] + " ");
-//         }
-//     }
-// }
-
-
-//------------OPTIMAL APPROACH---------------------------
 public class RemoveDuplicateSorted {
 
-    public static void main(String[] args) {
+    public static int removeDuplicates(int[] arr) {
 
-        int[] arr = {1, 1, 2, 2, 3, 4, 4};
-        int size = arr.length;
-        int last = 0;
+        if (arr.length == 0) {
+            return 0;
+        }
 
-        for(int i=0; i<arr.length-1; i++){
-            if(arr[i] != arr[i+1]){
-                int temp = arr[i];
-                arr[last] = arr[i];
-                arr[i] = temp;
-                last++;
-            }
+        int i = 0;
 
-            System.out.print("last" + last);
-             //last element
-            if(i == arr.length-1){
-                arr[last] = arr[arr.length-1];
+        for (int j = 1; j < arr.length; j++) {
+
+            if (arr[j] != arr[i]) {
+                i++;
+                arr[i] = arr[j];
             }
         }
 
-        for (int i = 0; i < size; i++) {
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+
+        int k = removeDuplicates(arr);
+
+        System.out.println("Number of Unique Elements = " + k);
+
+        System.out.print("Array after removing duplicates: ");
+
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
     }
