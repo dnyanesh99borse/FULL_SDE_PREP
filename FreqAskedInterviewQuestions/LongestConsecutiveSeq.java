@@ -1,10 +1,11 @@
+
 import java.util.*;
 
 public class LongestConsecutiveSeq {
 
     public static void main(String[] args) {
 
-        int[] arr = {9,1,4,7,3,-1,0,5,8,-1,6};
+        int[] arr = {9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6};
 
         HashSet<Integer> set = new HashSet<>();
 
@@ -19,9 +20,12 @@ public class LongestConsecutiveSeq {
 
             if (!set.contains(x - 1)) {
 
-                int current = x;
+                int current = x; //means this element is the only starting point
                 int count = 1;
 
+                //then check for next consecutive elements till they are present in the set.
+                //and simultaneously count their lenght
+                //simultaneously compare and check 
                 while (set.contains(current + 1)) {
                     current++;
                     count++;
