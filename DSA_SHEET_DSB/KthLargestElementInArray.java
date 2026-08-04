@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class NthLargestElementInArray {
+public class KthLargestElementInArray {
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minheap = new  PriorityQueue<>();
 
