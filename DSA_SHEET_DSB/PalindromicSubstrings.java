@@ -1,27 +1,40 @@
-import java.util.HashSet;
-
 public class PalindromicSubstrings {
-    public static int countSubstrings(String s) {
-        HashSet<Character> set = new HashSet<>();
-        int count = 0;
 
-        if (s.length() < 2) {
-            return 1;
+    int count = 0;
+
+    public int PalindromicSubStrings(String s) {
+
+        count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            // Odd length
+            expand(s, i, i);
+
+            // Even length
+            expand(s, i, i + 1);
         }
 
-        for(int i=0; i<s.length(); i++){
-            //for single characters cause all single charactes will be palindromic substrings
-            if(!(set.contains(s.charAt(i)))){
-                set.add(s.charAt(i));
-                count++;
-            }
-
-            //now check for each character using
-        }
         return count;
     }
-    public static void main(String[] args){
-        String s = "abc";
-        System.out.println(countSubstrings(s));
+
+    public void expand(String s, int left, int right) {
+
+        while (left >= 0 &&
+                right < s.length() &&
+                s.charAt(left) == s.charAt(right)) {
+
+            count++;
+
+            left--;
+            right++;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        PalindromicSubstrings obj = new PalindromicSubstrings();
+
+        System.out.println(obj.PalindromicSubStrings("aaa"));
     }
 }
