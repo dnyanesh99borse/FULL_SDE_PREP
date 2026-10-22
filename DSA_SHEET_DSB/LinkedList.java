@@ -11,6 +11,8 @@ public class LinkedList {
 
     static Node head = null;
 
+    //--------------------PRINT LIST----------------------------------
+
     public static void printList(Node head) {
         Node temp = head;
         while (temp != null) {
@@ -20,12 +22,13 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    //-------------------ADD FIRST----------------------------------
     public static void addFirst(int data) {
         Node newnode = new Node(data);
         newnode.next = head;
         head = newnode;
     }
-
+    //--------------------ADD LAST----------------------------------
     public static void addLast(int data) {
         Node newnode = new Node(data);
         if (head == null) {
@@ -38,7 +41,7 @@ public class LinkedList {
         }
         temp.next = newnode;
     }
-
+    //--------------------ADD ON POSITION----------------------------------
     public static void addOnPosition(int data, int position) {
         if (position == 0) {
             addFirst(data);
